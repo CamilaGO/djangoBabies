@@ -6,7 +6,7 @@ from events.models import Event
 class EventSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Parent
+        model = Event
         fields = (
             'id',
             'event_type',

@@ -5,7 +5,7 @@ from rest_framework.response import Response
 
 from permissions.services import APIPermissionClassFactory
 from events.models import Event
-from events.serializer import EventSerializer
+from events.serializers import EventSerializer
 
 def evaluate(user, obj, request):
     return user.first_name == obj.baby.parent.name

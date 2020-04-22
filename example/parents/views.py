@@ -5,8 +5,8 @@ from rest_framework.response import Response
 
 from permissions.services import APIPermissionClassFactory
 from parents.models import Parent
-from parents.serializer import ParentSerializer
-from babies.serializer import BabySerializer
+from parents.serializers import ParentSerializer
+from babies.serializers import BabySerializer
 
 class ParentViewSet(viewsets.ModelViewSet):
     queryset = Parent.objects.all()
