@@ -3,7 +3,7 @@ from datetime import datetime
 
 class Event(models.Model):
     event_type = models.CharField(max_length=80, null=True)
-    fecha = models.DateTimeField(default=datetime.now, blank=True)
+    date = models.DateTimeField(default=datetime.now, blank=True)
     note = models.CharField(max_length=800)
     baby = models.ForeignKey(
         'babies.Baby',
@@ -13,4 +13,4 @@ class Event(models.Model):
     )
 
     def __str__(self):
-        return 'Event: {}'.format(self.name)
+        return 'Event: {}'.format(self.event_type)
