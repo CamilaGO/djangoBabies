@@ -16,7 +16,7 @@ class BabyViewSet(viewsets.ModelViewSet):
     serializer_class = BabySerializer
     permission_classes = (
         APIPermissionClassFactory(
-            name='EventPermission',
+            name='BabyPermission',
             permission_configuration={
                 'base': {
                     'create': True,
