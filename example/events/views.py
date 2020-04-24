@@ -34,20 +34,19 @@ class EventViewSet(viewsets.ModelViewSet):
 
     def perform_create(self, serializer):
         parent_baby=serializer.validated_data["baby"]
-        print(parent_baby)
-       
+        #print(parent_baby)
         user = self.request.user
         #usuario=user.username
-        nombre_user=str(user.username)
-        nombre_padre=str(parent_baby)
-        print(nombre_user==nombre_padre)
-        print(user.username)
+        nameUser=str(user.username)
+        nameParent=str(parent_baby)
+        #print(nameUser==nameParent)
+        #print(user.username)
         
-        if (nombre_user!=nombre_padre):
+        if (nameUser!=nameParent):
             print ("Usted no tiene autorizado eso")
-        elif(nombre_user==nombre_padre):
+        elif(nameUser==nameParent):
             event = serializer.save()
-            print ("LLEGO A GUARDARSE")
+            print ("Se guardo el evento")
             assign_perm('events.change_event', user, event)
             assign_perm('events.view_event', user, event)
             return Response(serializer.data)
