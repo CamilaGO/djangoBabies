@@ -33,10 +33,6 @@ class EventViewSet(viewsets.ModelViewSet):
 
 
     def perform_create(self, serializer):
-        """user = self.request.user
-        assign_perm('events.change_event', user, event)
-        assign_perm('events.view_event', user, event)
-        return Response(serializer.data)"""
         parent_baby=serializer.validated_data["baby"]
         print(parent_baby)
        
@@ -55,3 +51,4 @@ class EventViewSet(viewsets.ModelViewSet):
             assign_perm('events.change_event', user, event)
             assign_perm('events.view_event', user, event)
             return Response(serializer.data)
+    
